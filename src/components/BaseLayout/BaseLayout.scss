@@ -1,0 +1,112 @@
+.content {
+  width: calc(100vw - 8rem);
+  height: calc(100vh - 11rem);
+
+  @apply absolute flex top-20 left-32 pl-16 overflow-auto;
+
+  .stock-data {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    @apply flex flex-row flex-wrap gap-5 py-8 w-fit overflow-auto scroll-smooth;
+    .pina-card {
+
+      .pina-pills-container {
+        font-family: Gotham-Rounded-Bold;
+        @apply flex flex-row w-full mt-2 justify-between;
+      }
+
+      .ihsg-card {
+        width: 780px;
+        height: 349px;
+        .detail-instrument {
+          @apply flex flex-row justify-between;
+
+          .emitent {
+            @apply flex flex-row gap-4 items-center;
+
+            .emitent-name {
+              font-family: Gotham-Rounded-Bold;
+              @apply flex flex-col text-base text-brand-black;
+
+              p:last-child {
+                font-family: Gotham-rounded;
+                @apply text-brand-text-grey text-xs;
+              }
+            }
+          }
+          .performances {
+            font-family: Gotham-Rounded-Bold;
+            @apply flex flex-col text-base text-brand-black text-right;
+
+            p:last-child {
+              font-family: Gotham-rounded;
+              @apply text-brand-text-green text-xs;
+            }
+          }
+        }
+
+        .pina-tags-container {
+          font-family: Gotham-Rounded-Bold;
+          @apply flex flex-row w-full mt-2 gap-2;
+        }
+      }
+    }
+  }
+
+  .stock-data::-webkit-scrollbar {
+    display: none;
+  }
+
+  aside {
+    @apply py-8 sticky right-20;
+    .pina-card {
+      @apply p-0;
+      .checkout-card {
+        width: 380px;
+        height: 429px;
+
+        .MuiTabs-flexContainer {
+          @apply flex justify-around pt-5;
+
+          .Mui-selected {
+            @apply text-brand-orange;
+          }
+        }
+
+        .checkout-content {
+          @apply text-brand-text-grey text-xxs p-5;
+          p:nth-child(2) {
+            font-family: Gotham-Rounded-Bold;
+            @apply text-sm text-brand-black mt-2;
+          }
+
+          .pina-subtotal {
+            @apply flex flex-row justify-between items-center mt-2;
+
+            p:nth-child(2) {
+              font-family: Gotham-Rounded-Bold;
+              @apply text-sm text-brand-black mt-0;
+            }
+          }
+
+          .divider {
+            @apply flex flex-row border w-full border-brand-border-grey mt-2 cursor-default;
+          }
+        }
+      }
+    }
+  }
+
+  .pina-card {
+    @apply bg-basic-12 rounded-2xl p-5 gap-4 w-fit h-fit;
+
+    .emitent-content {
+      width: 780px;
+      height: 349px;
+
+      .pina-pills-container{
+        @apply justify-start gap-2;
+      }
+    }
+  }
+}

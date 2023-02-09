@@ -1,0 +1,99 @@
+.pina-tag {
+  font-family: Gotham-Rounded-Medium;
+  @apply flex flex-row justify-between border border-solid w-fit p-2 gap-1 h-fit items-center whitespace-nowrap cursor-pointer;
+  min-width: 44px;
+
+  &__type {
+    &--primary {
+      @apply bg-basic-12  border-brand-border-grey;
+    }
+
+    &--default {
+      @apply bg-basic-11 border-basic-8;
+    }
+
+    &--disable {
+      @apply bg-basic-10 border-basic-7;
+    }
+
+    &--danger {
+      @apply bg-system-danger-light border-system-danger;
+    }
+
+    &--warning {
+      @apply bg-system-warning-light border-system-warning;
+    }
+
+    &--success {
+      @apply bg-system-success-light border-system-success;
+    }
+  }
+
+  &__shape--rounded {
+    @apply rounded-3xl;
+  }
+
+  &__shape--default {
+    @apply rounded;
+  }
+
+  &__prefix-icon {
+    @apply h-fit;
+  }
+
+  &__children {
+    @apply h-fit text-xs;
+
+    &--primary {
+      @apply text-brand-black;
+    }
+
+    &--default {
+      @apply text-basic-5;
+    }
+
+    &--disable {
+      @apply text-basic-7;
+    }
+
+    &--danger {
+      @apply text-system-danger;
+    }
+
+    &--warning {
+      @apply text-system-warning;
+    }
+
+    &--success {
+      @apply text-system-success;
+    }
+  }
+
+  &__suffix-icon {
+    @apply h-fit flex;
+
+    &--primary {
+      @apply fill-brand-deep-ocean;
+    }
+
+    &--default {
+      @apply fill-basic-5;
+    }
+
+    &--disable {
+      @apply fill-basic-7;
+    }
+
+    &--danger {
+      @apply fill-system-danger;
+    }
+
+    &--warning {
+      @apply fill-system-warning;
+    }
+
+    &--success {
+      @apply fill-system-success;
+    }
+  }
+}

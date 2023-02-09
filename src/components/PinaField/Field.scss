@@ -1,0 +1,43 @@
+.pina-input-field {
+  @apply mt-4 w-full;
+
+  label {
+  }
+
+  .input-box {
+    @apply flex flex-row items-center px-3 py-4 border border-brand-border-grey rounded-xl h-12 text-sm justify-between;
+
+    .icon-btn {
+      @apply cursor-pointer;
+    }
+
+    .input-view {
+      font-family: Gotham-Rounded-Bold;
+      @apply bg-basic-12 text-brand-black mt-0;
+    }
+
+    input {
+      font-family: Gotham-Rounded-Bold;
+      @apply bg-basic-12 text-brand-black mt-0 text-center;
+    }
+
+    input:focus-visible {
+      outline: none;
+    }
+
+    input[type="number"]::-webkit-outer-spin-button,
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    input[type="number"] {
+      -moz-appearance: textfield;
+    }
+  }
+}
+
+.pina-input-field:nth-child(2):after {
+  content: "";
+  @apply flex flex-row border w-full border-brand-border-grey mt-5 cursor-default;
+}

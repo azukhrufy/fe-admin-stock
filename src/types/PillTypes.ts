@@ -1,0 +1,1 @@
+export type PillType = 'active' | 'default' | 'disable';

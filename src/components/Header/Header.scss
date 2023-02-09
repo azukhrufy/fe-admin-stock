@@ -1,0 +1,26 @@
+.pina-top-header{
+    width: calc(100% - 8rem);
+    @apply flex absolute top-0 bg-basic-12 flex-row h-20 left-32 justify-between;
+
+    .pina-header-left{
+        @apply flex items-center flex-row pl-16;
+    }
+
+    .pina-header-right{
+        @apply flex items-center pr-20 gap-4;
+    }
+
+    .pina-persdata-text{
+
+        .subtitle{
+            @apply text-brand-text-grey text-xs;
+        }
+
+        .value{
+            font-family: Gotham-Rounded-Bold;
+            @apply text-brand-black text-sm;
+        }
+
+        @apply flex flex-col ml-5 w-44;
+    }
+}

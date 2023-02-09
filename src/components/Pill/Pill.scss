@@ -1,0 +1,18 @@
+.pina-pill{
+    font-family: Gotham-Rounded-Medium;
+    @apply flex flex-row p-2 items-center justify-center cursor-pointer gap-1 h-fit rounded-lg;
+    min-width: 96.29px;
+
+    &__type{
+        &--active{
+            @apply bg-brand-orange;
+        }
+        &--default{
+            @apply bg-brand-grey;
+        }
+    }
+
+    &__children{
+        @apply h-fit text-xs text-basic-1;
+    }
+}

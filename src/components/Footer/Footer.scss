@@ -1,0 +1,11 @@
+.pina-footer{
+    @apply absolute bottom-0 w-full h-24 bg-basic-12 px-10 py-9 flex justify-between items-center;
+    .pina-left-footer{
+        @apply flex items-center;
+    }
+    .pina-right-footer{
+        color: #292929;
+        font-family: Gotham-rounded;
+        @apply text-sm;
+    }
+}
