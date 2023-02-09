@@ -20,7 +20,7 @@ const BaseLayout = ({ menu, sidebarLogo, headerData, children }: BaseLayoutProps
       <Sidebar logo={sidebarLogo} menus={menu} />
       <div className="content">{children}</div>
       <Footer
-        Icon={<img src="/Image/footer.jpg" alt='footer' />}
+        Icon={<img src="/Image/footer.jpg" alt="footer" />}
         Copyright="Copyright © 2022 PT Pina Aplikasi Bersama"
       />
     </>

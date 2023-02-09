@@ -44,7 +44,7 @@ const Menu = [
 const userData = {
   portfolio: "130.431.449",
   buyingPwr: "13.431.449",
-  image: <img src="/Image/user.png" alt='user' />,
+  image: <img src="/Image/user.png" alt="user" />,
 };
 
 const emitenData = {
@@ -161,7 +161,7 @@ const Demo = () => {
               <div className="detail-instrument">
                 <div className="emitent">
                   <div className="emitent-img">
-                    <img src="/Image/tlkm.png" alt='tlkm' />
+                    <img src="/Image/tlkm.png" alt="tlkm" />
                   </div>
                   <div className="emitent-name">
                     <p>{emitenData.code}</p>
