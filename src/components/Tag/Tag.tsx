@@ -33,7 +33,6 @@ const Tag = ({
     ) : (
       <button
         type='button'
-        role='closable-icon'
         onClick={(e) => {
           e.stopPropagation();
           onCloseButtonClicked?.(e);
