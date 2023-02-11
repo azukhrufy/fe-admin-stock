@@ -103,10 +103,23 @@
     .emitent-content {
       width: 780px;
       height: 349px;
+      
 
       .pina-pills-container{
         @apply justify-start gap-2;
       }
+
+      .content-container{
+        @apply flex flex-row gap-4;
+        .left-content{
+          @apply flex-1
+        }
+  
+        .right-content{
+          @apply flex-1
+        }
+      }
+
     }
   }
 }

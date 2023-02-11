@@ -12,6 +12,7 @@ import Box from "@mui/material/Box";
 import TabPanel from "../components/Tabs/Tabs";
 import Field from "../components/PinaField/Field";
 import { FormIcons } from "../components/Icons/FormIcons";
+import TextField from "../components/PinaField/TextField";
 
 const Menu = [
   {
@@ -210,6 +211,14 @@ const Demo = () => {
                     {filter}
                   </Pill>
                 ))}
+              </div>
+              <div className="content-container">
+                <div className="left-content">
+                  <TextField />
+                </div>
+                <div className="right-content">
+                  <TextField />
+                </div>
               </div>
             </div>
           </div>

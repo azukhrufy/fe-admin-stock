@@ -41,3 +41,8 @@
   content: "";
   @apply flex flex-row border w-full border-brand-border-grey mt-5 cursor-default;
 }
+
+
+.pina-text-field{
+  @apply flex flex-row w-full justify-between;
+}
