@@ -46,14 +46,6 @@
 
         .chart-container{
           @apply mt-4;
-
-          &.active{
-            display: block;
-          }
-
-          &.inactive{
-            display: none;
-          }
         }
 
         .pina-tags-container {

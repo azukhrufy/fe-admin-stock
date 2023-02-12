@@ -3,8 +3,6 @@ import BaseLayout from "../components/BaseLayout/BaseLayout";
 import Tag from "../components/Tag/Tag";
 import Pill from "../components/Pill/Pill";
 import { useState } from "react";
-import { Line } from "react-chartjs-2";
-import { Chart, registerables, ChartOptions } from 'chart.js';
 
 import * as React from "react";
 import Tabs from "@mui/material/Tabs";
@@ -19,10 +17,8 @@ import { Menu } from "../constant/menu";
 import { useAction } from "../hooks/useAction";
 import { useFilter } from "../hooks/useFilter";
 import CompanyProfile from "./Fragments/CompanyProfile";
-import { chartMoves } from "../constant/chartMoves";
 import StockChart from "./Fragments/StockChart";
 
-Chart.register(...registerables);
 
 const userData = {
   portfolio: "130.431.449",
@@ -38,32 +34,6 @@ const userData = {
       lot: 3,
     },
   ]
-};
-
-const data = {
-  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
-  datasets: [
-    {
-      label: "",
-      data: [6500, 6050, 7700, 6800, 8000, 7500],
-      fill: true,
-      backgroundColor: "rgba(75,192,192,0.2)",
-      borderColor: "rgba(75,192,192,1)"
-    }
-  ]
-};
-
-const options = {
-  plugins: {
-    legend: {
-      display: false
-    }
-  },
-  scales: {
-    y:{
-      
-    }
-  }
 };
 
 function a11yProps(index: number) {
