@@ -1,8 +1,13 @@
-const TextField = () => {
+interface TextFieldProps {
+    label: String;
+    value: String;
+}
+
+const TextField = ({label, value}: TextFieldProps) => {
     return(
         <div className="pina-text-field">
-            <p>Label</p>
-            <p>Value</p>
+            <p className="pina-text-field-label">{label}</p>
+            <p className="pina-text-field-value">{value}</p>
         </div>
     )
 }

@@ -1,9 +1,10 @@
 import { TagIcons } from "../components/Icons/TagIcons";
-import { MenuIcon } from "../components/Icons/MenuIcons";
 import BaseLayout from "../components/BaseLayout/BaseLayout";
 import Tag from "../components/Tag/Tag";
 import Pill from "../components/Pill/Pill";
 import { useState } from "react";
+import { Line } from "react-chartjs-2";
+import { Chart, registerables, ChartOptions } from 'chart.js';
 
 import * as React from "react";
 import Tabs from "@mui/material/Tabs";
@@ -12,69 +13,55 @@ import Box from "@mui/material/Box";
 import TabPanel from "../components/Tabs/Tabs";
 import Field from "../components/PinaField/Field";
 import { FormIcons } from "../components/Icons/FormIcons";
-import TextField from "../components/PinaField/TextField";
+import Statistics from "./Fragments/Statistics";
+import { emitenData } from "../constant/emitent";
+import { Menu } from "../constant/menu";
+import { useAction } from "../hooks/useAction";
+import { useFilter } from "../hooks/useFilter";
+import CompanyProfile from "./Fragments/CompanyProfile";
 
-const Menu = [
-  {
-    id: "home",
-    icon: MenuIcon.home,
-    name: "Home",
-  },
-  {
-    id: "portfolio",
-    icon: MenuIcon.portfolio,
-    name: "Portfolio",
-  },
-  {
-    id: "order",
-    icon: MenuIcon.order,
-    name: "Order",
-  },
-  {
-    id: "search",
-    icon: MenuIcon.search,
-    name: "Search",
-  },
-  {
-    id: "profile",
-    icon: MenuIcon.profile,
-    name: "Profile",
-  },
-];
+Chart.register(...registerables);
 
 const userData = {
   portfolio: "130.431.449",
-  buyingPwr: "13.431.449",
+  buyingPwr: 13431449,
   image: <img src="/Image/user.png" alt="user" />,
+  stock: [
+    {
+      code: 'TLKM',
+      lot: 5,
+    },
+    {
+      code: 'ANTM',
+      lot: 3,
+    },
+  ]
 };
 
-const emitenData = {
-  name: "Telkom Indonesia (Persero)",
-  code: "TLKM",
-  image: "/Image/tlkm.png",
-  tags: [
+const data = {
+  labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun"],
+  datasets: [
     {
-      name: "Energi",
-      icon: TagIcons.energy,
-    },
-    {
-      name: "Batu Bara",
-      icon: TagIcons.miningIcon,
-    },
-    {
-      name: "Blue Chip",
-      icon: TagIcons.blueChip,
-    },
-  ],
-  filters: ["1D", "1M", "6M", "YTD", "1Y", "5Y", "All"],
-  contentFilters: [
-    "Statistic",
-    "Corp Action",
-    "Berita",
-    "Laporan Keuangan",
-    "Tentang Perusahaan",
-  ],
-  price: 750019,
+      label: "",
+      data: [6500, 6050, 7700, 6800, 8000, 7500],
+      fill: true,
+      backgroundColor: "rgba(75,192,192,0.2)",
+      borderColor: "rgba(75,192,192,1)"
+    }
+  ]
+};
+
+const options = {
+  plugins: {
+    legend: {
+      display: false
+    }
+  },
+  scales: {
+    y:{
+      
+    }
+  }
 };
 
 function a11yProps(index: number) {
@@ -87,141 +74,98 @@ function a11yProps(index: number) {
 const Demo = () => {
   const [activeFilter, setActiveFilter] = useState(3);
   const [value, setValue] = useState(0);
-  const [buyLot, setBuyLoy] = useState(1);
+  const [buyLot, setBuyLot] = useState(1);
   const [buyPrice, setBuyPrice] = useState(emitenData.price);
   const [subTotal, setSubtotal] = useState(buyLot * buyPrice);
 
+  const requestedLot = useAction(buyLot, buyPrice, setBuyLot, setSubtotal);
+  const selledLot = useAction(buyLot, buyPrice, setBuyLot, setSubtotal);
+
+  const requestedPrice = useAction(buyPrice, buyLot, setBuyPrice, setSubtotal);
+  const desiredPrice = useAction(buyPrice, buyLot, setBuyPrice, setSubtotal);
+
   const [activeContentFilter, setActiveContentFilter] = useState(0);
 
-  const handleContentFilterChange = (key: number) => {
-    setActiveContentFilter(key);
-  };
+  let timeRangeFilter = useFilter();
+  let contentFilter = useFilter();
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
-  };
-
-  const handleFilter = (key: number) => {
-    setActiveFilter(key);
   };
 
   const handleSubmit = () => {
     console.log("submit");
   };
 
-  const addLot = () => {
-    let newValue = buyLot + 1;
-    setBuyLoy(newValue);
-    setSubtotal(newValue * buyPrice);
-  };
-
-  const subLot = () => {
-    if (buyLot > 0) {
-      const newValue = buyLot - 1;
-      setBuyLoy(newValue);
-      setSubtotal(newValue * buyPrice);
-    }
-  };
-
-  let onChange = (e: any) => {
-    if (!isNaN(Number(e.target.value))) {
-      let newValue = Number(e.target.value);
-      setBuyLoy(newValue);
-      setSubtotal(newValue * buyPrice);
-    }
-  };
-
-  const addPrice = () => {
-    let newValue = buyPrice + 1;
-    setBuyPrice(newValue);
-    setSubtotal(newValue * buyLot);
-  };
-
-  const subPrice = () => {
-    if (buyPrice > 0) {
-      const newValue = buyPrice - 1;
-      setBuyPrice(newValue);
-      setSubtotal(newValue * buyLot);
-    }
-  };
-
-  let handlePriceChange = (e: any) => {
-    if (!isNaN(Number(e.target.value))) {
-      let newValue = Number(e.target.value);
-      setBuyPrice(newValue);
-      setSubtotal(newValue * buyLot);
-    }
-  };
-
   return (
     <>
       <BaseLayout menu={Menu} sidebarLogo={TagIcons.pina} headerData={userData}>
         <div className="stock-data">
-          <div className="pina-card">
-            <div className="ihsg-card">
-              <div className="detail-instrument">
-                <div className="emitent">
-                  <div className="emitent-img">
-                    <img src="/Image/tlkm.png" alt="tlkm" />
-                  </div>
-                  <div className="emitent-name">
-                    <p>{emitenData.code}</p>
-                    <p>{emitenData.name}</p>
-                  </div>
+          <div className="pina-card ihsg-card">
+            <div className="detail-instrument">
+              <div className="emitent">
+                <div className="emitent-img">
+                  <img src="/Image/tlkm.png" alt="tlkm" />
                 </div>
-                <div className="performances">
-                  <p>{emitenData.price}</p>
-                  <p>+48,83 (+0.68%)</p>
+                <div className="emitent-name">
+                  <p>{emitenData.code}</p>
+                  <p>{emitenData.name}</p>
                 </div>
               </div>
-              <div className="pina-tags-container">
-                {emitenData.tags.map((tag, key) => (
-                  <Tag
-                    key={key}
-                    tagType="primary"
-                    tagShape="rounded"
-                    prefixIcon={tag.icon}
-                  >
-                    {tag.name}
-                  </Tag>
-                ))}
-              </div>
-              <div className="pina-pills-container">
-                {emitenData.filters.map((filter, key) => (
-                  <Pill
-                    key={key}
-                    pillType={activeFilter === key ? "active" : "default"}
-                    onClick={() => handleFilter(key)}
-                  >
-                    {filter}
-                  </Pill>
-                ))}
+              <div className="performances">
+                <p>{emitenData.price}</p>
+                <p>+48,83 (+0.68%)</p>
               </div>
             </div>
+            <div className="pina-tags-container">
+              {emitenData.tags.map((tag, key) => (
+                <Tag
+                  key={key}
+                  tagType="primary"
+                  tagShape="rounded"
+                  prefixIcon={tag.icon}
+                >
+                  {tag.name}
+                </Tag>
+              ))}
+            </div>
+            <div className="pina-pills-container">
+              {emitenData.filters.map((filter, key) => (
+                <Pill
+                  key={key}
+                  pillType={activeFilter === key ? "active" : "default"}
+                  onClick={() => timeRangeFilter.filter(key, setActiveFilter)}
+                >
+                  {filter}
+                </Pill>
+              ))}
+            </div>
+            <>
+            {/* <Line data={data} legend={legend} options={options} /> */}
+            <Line data={data} options={options} width="740" height="162" />
+            </>
           </div>
-          <div className="pina-card">
-            <div className="emitent-content">
-              <div className="pina-pills-container">
-                {emitenData.contentFilters.map((filter, key) => (
-                  <Pill
-                    key={key}
-                    pillType={activeContentFilter === key ? "active" : "default"}
-                    onClick={() => handleContentFilterChange(key)}
-                  >
-                    {filter}
-                  </Pill>
-                ))}
-              </div>
-              <div className="content-container">
-                <div className="left-content">
-                  <TextField />
-                </div>
-                <div className="right-content">
-                  <TextField />
-                </div>
-              </div>
+          <div className="pina-card emitent-content">
+            <div className="pina-pills-container">
+              {emitenData.contentFilters.map((filter, key) => (
+                <Pill
+                  key={key}
+                  pillType={activeContentFilter === key ? "active" : "default"}
+                  onClick={() => contentFilter.filter(key, setActiveContentFilter)}
+                >
+                  {filter}
+                </Pill>
+              ))}
+            </div>
+            <div className="content-container">
+              <Statistics
+                value={emitenData.statistic}
+                active={activeContentFilter}
+              />
+              <CompanyProfile active = {activeContentFilter}/>
             </div>
           </div>
+         
         </div>
         <aside>
           <div className="pina-card">
@@ -254,9 +198,9 @@ const Demo = () => {
                         defaultValue={buyLot}
                         prefixIcon={FormIcons.minus}
                         suffixIcon={FormIcons.plus}
-                        onClickPrefix={subLot}
-                        onClickSuffix={addLot}
-                        onChangeValue={(e: any) => onChange(e)}
+                        onClickPrefix={requestedLot.sub}
+                        onClickSuffix={requestedLot.add}
+                        onChangeValue={(e: any) => requestedLot.handleChange(e)}
                       />
                       <Field
                         name="stockPrice"
@@ -264,9 +208,11 @@ const Demo = () => {
                         defaultValue={buyPrice}
                         prefixIcon={FormIcons.minus}
                         suffixIcon={FormIcons.plus}
-                        onClickPrefix={subPrice}
-                        onClickSuffix={addPrice}
-                        onChangeValue={(e: any) => handlePriceChange(e)}
+                        onClickPrefix={requestedPrice.sub}
+                        onClickSuffix={requestedPrice.add}
+                        onChangeValue={(e: any) =>
+                          requestedPrice.handleChange(e)
+                        }
                       />
                       <div className="pina-subtotal">
                         <p>Total Pembelian</p>
@@ -282,8 +228,14 @@ const Demo = () => {
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                   <div className="checkout-content">
-                    <p>Dana yang tersedia</p>
-                    <p>IDR {userData.buyingPwr}</p>
+                    <p>Lot yang tersedia</p>
+                    <p>{userData.stock.map((stock) => {
+                      if(stock.code === emitenData.code){
+                        return(
+                          stock.lot
+                        );
+                      }
+                    })} Lot</p>
                     <form onSubmit={handleSubmit}>
                       <Field
                         name="lot"
@@ -291,9 +243,9 @@ const Demo = () => {
                         defaultValue={buyLot}
                         prefixIcon={FormIcons.minus}
                         suffixIcon={FormIcons.plus}
-                        onClickPrefix={subLot}
-                        onClickSuffix={addLot}
-                        onChangeValue={(e: any) => onChange(e)}
+                        onClickPrefix={selledLot.sub}
+                        onClickSuffix={selledLot.add}
+                        onChangeValue={(e: any) => selledLot.handleChange(e)}
                       />
                       <Field
                         name="stockPrice"
@@ -301,12 +253,12 @@ const Demo = () => {
                         defaultValue={buyPrice}
                         prefixIcon={FormIcons.minus}
                         suffixIcon={FormIcons.plus}
-                        onClickPrefix={subPrice}
-                        onClickSuffix={addPrice}
-                        onChangeValue={(e: any) => handlePriceChange(e)}
+                        onClickPrefix={desiredPrice.sub}
+                        onClickSuffix={desiredPrice.add}
+                        onChangeValue={(e: any) => desiredPrice.handleChange(e)}
                       />
                       <div className="pina-subtotal">
-                        <p>Total Pembelian</p>
+                        <p>Total Penjualan</p>
                         <p> {subTotal} </p>
                       </div>
                       <div className="divider"></div>
