@@ -1,10 +1,4 @@
-import { TagIcons } from "../components/Icons/TagIcons";
-import BaseLayout from "../components/BaseLayout/BaseLayout";
-import Tag from "../components/Tag/Tag";
-import Pill from "../components/Pill/Pill";
-import { useState } from "react";
-
-import * as React from "react";
+import React, { useState } from "react";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
@@ -18,6 +12,10 @@ import { useAction } from "../hooks/useAction";
 import { useFilter } from "../hooks/useFilter";
 import CompanyProfile from "./Fragments/CompanyProfile";
 import StockChart from "../components/Chart/StockChart";
+import { TagIcons } from "../components/Icons/TagIcons";
+import BaseLayout from "../components/BaseLayout/BaseLayout";
+import Tag from "../components/Tag/Tag";
+import Pill from "../components/Pill/Pill";
 
 
 const userData = {
