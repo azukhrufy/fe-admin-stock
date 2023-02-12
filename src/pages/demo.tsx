@@ -17,7 +17,7 @@ import { Menu } from "../constant/menu";
 import { useAction } from "../hooks/useAction";
 import { useFilter } from "../hooks/useFilter";
 import CompanyProfile from "./Fragments/CompanyProfile";
-import StockChart from "./Fragments/StockChart";
+import StockChart from "../components/Chart/StockChart";
 
 
 const userData = {
