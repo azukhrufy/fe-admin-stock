@@ -7,8 +7,8 @@ export const chartMoves = [
           label: "",
           data: [6550, 6525, 7000, 7125, 7500],
           fill: true,
-          backgroundColor: "rgba(75,192,192,0.2)",
-          borderColor: "rgba(75,192,192,1)",
+          backgroundColor: "rgba(222,243,201,0.5)",
+          borderColor: "rgba(123, 204, 41, 1)",
         },
       ],
     },
@@ -27,8 +27,8 @@ export const chartMoves = [
           label: "",
           data: [4850, 5525, 6450, 7125, 7500],
           fill: true,
-          backgroundColor: "rgba(75,192,192,0.2)",
-          borderColor: "rgba(75,192,192,1)",
+          backgroundColor: "rgba(222,243,201,0.5)",
+          borderColor: "rgba(123, 204, 41, 1)",
         },
       ],
     },
@@ -41,8 +41,8 @@ export const chartMoves = [
           label: "",
           data: [4500, 5125, 6525, 6850, 7125, 7500],
           fill: true,
-          backgroundColor: "rgba(75,192,192,0.2)",
-          borderColor: "rgba(75,192,192,1)",
+          backgroundColor: "rgba(222,243,201,0.5)",
+          borderColor: "rgba(123, 204, 41, 1)",
         },
       ],
     },
@@ -61,8 +61,8 @@ export const chartMoves = [
           label: "",
           data: [4850, 5525, 6450, 7125, 7500],
           fill: true,
-          backgroundColor: "rgba(75,192,192,0.2)",
-          borderColor: "rgba(75,192,192,1)",
+          backgroundColor: "rgba(222,243,201,0.5)",
+          borderColor: "rgba(123, 204, 41, 1)",
         },
       ],
     },
@@ -75,8 +75,8 @@ export const chartMoves = [
             label: "",
             data: [4500, 5125, 6525, 6850, 7125, 7500, 4500, 5125, 6525, 6850, 7125, 7500],
             fill: true,
-            backgroundColor: "rgba(75,192,192,0.2)",
-            borderColor: "rgba(75,192,192,1)"
+            backgroundColor: "rgba(222,243,201,0.5)",
+            borderColor: "rgba(123, 204, 41, 1)",
           }
         ]
       }
@@ -88,8 +88,8 @@ export const chartMoves = [
             label: "",
             data: [1900, 2120, 5620, 3450, 7500],
             fill: true,
-            backgroundColor: "rgba(75,192,192,0.2)",
-            borderColor: "rgba(75,192,192,1)"
+            backgroundColor: "rgba(222,243,201,0.5)",
+            borderColor: "rgba(123, 204, 41, 1)",
           }
         ]
       }
@@ -101,8 +101,8 @@ export const chartMoves = [
             label: "",
             data: [2060,1900, 2120, 5620, 3450, 7500],
             fill: true,
-            backgroundColor: "rgba(75,192,192,0.2)",
-            borderColor: "rgba(75,192,192,1)"
+            backgroundColor: "rgba(222,243,201,0.5)",
+            borderColor: "rgba(123, 204, 41, 1)",
           }
         ]
       }
