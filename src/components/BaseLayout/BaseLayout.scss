@@ -44,6 +44,18 @@
           }
         }
 
+        .chart-container{
+          @apply mt-4;
+
+          &.active{
+            display: block;
+          }
+
+          &.inactive{
+            display: none;
+          }
+        }
+
         .pina-tags-container {
           font-family: Gotham-Rounded-Bold;
           @apply flex flex-row w-full mt-2 gap-2;

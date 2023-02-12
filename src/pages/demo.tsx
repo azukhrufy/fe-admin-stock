@@ -19,6 +19,8 @@ import { Menu } from "../constant/menu";
 import { useAction } from "../hooks/useAction";
 import { useFilter } from "../hooks/useFilter";
 import CompanyProfile from "./Fragments/CompanyProfile";
+import { chartMoves } from "../constant/chartMoves";
+import StockChart from "./Fragments/StockChart";
 
 Chart.register(...registerables);
 
@@ -140,10 +142,9 @@ const Demo = () => {
                 </Pill>
               ))}
             </div>
-            <>
-            {/* <Line data={data} legend={legend} options={options} /> */}
-            <Line data={data} options={options} width="740" height="162" />
-            </>
+            <StockChart
+              activeFilter = {activeFilter}
+            />
           </div>
           <div className="pina-card emitent-content">
             <div className="pina-pills-container">
