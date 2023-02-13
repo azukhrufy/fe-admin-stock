@@ -196,11 +196,8 @@ const Demo = () => {
                     </div>
                     <div className="divider"></div>
                     <div className="divider"></div>
-                    <Pill className="mt-4 p-2" pillType="active">
-                      <button
-                        // type="submit"
-                        onClick={checkoutModal.handleOpen}
-                      >
+                    <Pill onClick={checkoutModal.handleOpen} className="mt-4 p-2" pillType="active">
+                      <button>
                         Beli
                       </button>
                     </Pill>
@@ -245,8 +242,8 @@ const Demo = () => {
                     </div>
                     <div className="divider"></div>
                     <div className="divider"></div>
-                    <Pill className="mt-4 p-2" pillType="active">
-                      <button onClick={sellModal.handleOpen}>Jual</button>
+                    <Pill className="mt-4 p-2" pillType="active" onClick={sellModal.handleOpen}>
+                      <button>Jual</button>
                     </Pill>
                   </div>
                 </TabPanel>
@@ -274,8 +271,8 @@ const Demo = () => {
             <TextField label="Total Amount" value={String(subTotal + 2500)} />
             <div className="divider" style={{ marginBottom: "6px" }}></div>
             <div className="divider"></div>
-            <Pill className="mt-4 p-2" pillType="active">
-              <button onClick={checkoutModal.handleClose}>Beli</button>
+            <Pill className="mt-4 p-2" pillType="active"  onClick={checkoutModal.handleClose}>
+              <button>Beli</button>
             </Pill>
           </>
         </PinaModal>
@@ -300,8 +297,8 @@ const Demo = () => {
             <TextField label="Total Amount" value={String(subTotal + 2500)} />
             <div className="divider" style={{ marginBottom: "6px" }}></div>
             <div className="divider"></div>
-            <Pill className="mt-4 p-2" pillType="active">
-              <button onClick={sellModal.handleClose}>Jual</button>
+            <Pill className="mt-4 p-2" pillType="active" onClick={sellModal.handleClose}>
+              <button>Jual</button>
             </Pill>
           </>
         </PinaModal>
