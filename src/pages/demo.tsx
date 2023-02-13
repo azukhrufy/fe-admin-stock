@@ -265,8 +265,31 @@ const Demo = () => {
           <div className="divider"></div>
           <TextField
             label="Stock"
-            value={'TLKM'}
+            value={emitenData.code}
           />
+          <TextField
+            label="Action"
+            value={'Buy'}
+          />
+          <TextField
+            label="Harga"
+            value={buyPrice.toString()}
+          />
+          <TextField
+            label="Lot"
+            value={buyLot.toString()}
+          />
+          <TextField
+            label="Biaya"
+            value={String(2500)}
+          />
+          <div className="divider"></div>
+          <TextField 
+            label="Total Amount"
+            value={String(subTotal + 2500)}
+          />
+          <div className="divider" style={{marginBottom: '6px'}}></div>
+          <div className="divider"></div>
           </>
         </PinaModal>
       </BaseLayout>
