@@ -5,17 +5,16 @@
   @apply absolute flex top-20 left-32 pl-16 overflow-auto;
 
   .stock-data {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    @apply flex flex-row flex-wrap gap-5 py-8 w-fit overflow-auto scroll-smooth;
+    @apply py-8 w-fit float-left mb-5;
     .pina-card {
+      @apply bg-basic-12 rounded-2xl p-5 gap-4 w-fit h-fit mb-5;
 
       .pina-pills-container {
         font-family: Gotham-Rounded-Bold;
         @apply flex flex-row w-full mt-2 justify-between;
       }
 
-      .ihsg-card {
+      &.ihsg-card {
         width: 780px;
         height: 349px;
         .detail-instrument {
@@ -45,9 +44,62 @@
           }
         }
 
+        .chart-container{
+          @apply mt-4;
+        }
+
         .pina-tags-container {
           font-family: Gotham-Rounded-Bold;
           @apply flex flex-row w-full mt-2 gap-2;
+        }
+      }
+
+      &.emitent-content {
+        width: 780px;
+        height: 467px;
+        @apply mb-5;
+  
+        .pina-pills-container {
+          @apply justify-start gap-2;
+        }
+  
+        .content-container {
+          @apply flex flex-row gap-5 mt-5;
+          h2 {
+            font-family: Gotham-Rounded-Bold;
+            @apply mb-3 text-base;
+          }
+          .statistic-left-content {
+            &.active{
+              display: block
+            }
+  
+            &.inactive{
+              display: none;
+            }
+            @apply flex-1;
+  
+            h2:not(:first-child){
+              @apply mt-4;
+            }
+          }
+  
+          .statistic-right-content {
+  
+            &.active{
+              display: block
+            }
+  
+            &.inactive{
+              display: none;
+            }
+  
+            @apply flex-1;
+  
+            h2:not(:first-child){
+              @apply mt-4;
+            }
+          }
         }
       }
     }
@@ -58,9 +110,9 @@
   }
 
   aside {
-    @apply py-8 sticky right-20;
+    @apply ml-5 py-8 sticky top-0;
     .pina-card {
-      @apply p-0;
+      @apply bg-basic-12 rounded-2xl p-5 gap-4 w-fit h-fit p-0;
       .checkout-card {
         width: 380px;
         height: 429px;
@@ -88,38 +140,22 @@
               @apply text-sm text-brand-black mt-0;
             }
           }
-
-          .divider {
-            @apply flex flex-row border w-full border-brand-border-grey mt-2 cursor-default;
-          }
         }
       }
     }
   }
+}
 
-  .pina-card {
-    @apply bg-basic-12 rounded-2xl p-5 gap-4 w-fit h-fit;
+.pina-modal-header{
+  @apply text-center;
 
-    .emitent-content {
-      width: 780px;
-      height: 349px;
-      
+  p:nth-child(1){
+    font-family: Gotham-Rounded-Bold;
+    @apply text-base;
+  }
 
-      .pina-pills-container{
-        @apply justify-start gap-2;
-      }
-
-      .content-container{
-        @apply flex flex-row gap-4;
-        .left-content{
-          @apply flex-1
-        }
-  
-        .right-content{
-          @apply flex-1
-        }
-      }
-
-    }
+  p:nth-child(2){
+    font-family: Gotham-Rounded;
+    @apply text-brand-text-grey text-xs;
   }
 }

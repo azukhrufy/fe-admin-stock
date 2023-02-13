@@ -27,7 +27,7 @@ export const Router: React.FC = () => {
         <Route exact key={index} path={router.path} component={router.component} />
       ))}
       <Route exact path='/'>
-        <Redirect to={process.env.REACT_APP_BASE_PATH ?? '/main'} />
+        <Redirect to={process.env.REACT_APP_BASE_PATH ?? '/demo'} />
       </Route>
     </BrowserRouter>
   );

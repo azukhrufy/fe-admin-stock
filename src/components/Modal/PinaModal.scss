@@ -1,0 +1,33 @@
+.pina-modal-container{
+    transform: translate(-50%, -50%);
+    @apply flex flex-col absolute top-1/2 left-1/2 w-96;
+    height: 352px;
+
+    .pina-modal-top-icon{
+        @apply absolute p-0 flex justify-center items-center w-full;
+        top: -105px;
+        z-index: -1;
+
+        svg{
+            z-index: -1;
+        }
+    }
+
+    .pina-modal-content{
+        @apply p-5 block absolute w-full h-full bg-basic-12 rounded-2xl;
+        z-index: 99;
+
+        .pina-text-field{
+            .pina-text-field-label{
+                @apply text-xs;
+            }
+
+            .pina-text-field-value{
+                @apply text-base;
+            }
+        }
+        .divider{
+            @apply mb-3;
+        }
+    }
+}
