@@ -445,8 +445,8 @@ export const FormIcons = {
           y2="49.7949"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#5F9DA9" />
-          <stop offset="1" stop-color="#E9F3F3" stop-opacity="0.01" />
+          <stop stopColor="#5F9DA9" />
+          <stop offset="1" stopColor="#E9F3F3" stopOpacity="0.01" />
         </linearGradient>
         <linearGradient
           id="paint1_linear_1_774"
@@ -456,8 +456,8 @@ export const FormIcons = {
           y2="49.7949"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#5F9DA9" />
-          <stop offset="1" stop-color="#E9F3F3" stop-opacity="0.01" />
+          <stop stopColor="#5F9DA9" />
+          <stop offset="1" stopColor="#E9F3F3" stopOpacity="0.01" />
         </linearGradient>
         <linearGradient
           id="paint2_linear_1_774"
@@ -467,8 +467,8 @@ export const FormIcons = {
           y2="75.9487"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#5F9DA9" />
-          <stop offset="1" stop-color="#E9F3F3" stop-opacity="0.01" />
+          <stop stopColor="#5F9DA9" />
+          <stop offset="1" stopColor="#E9F3F3" stopOpacity="0.01" />
         </linearGradient>
         <linearGradient
           id="paint3_linear_1_774"
@@ -478,8 +478,8 @@ export const FormIcons = {
           y2="75.9487"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#5F9DA9" />
-          <stop offset="1" stop-color="#E9F3F3" stop-opacity="0.01" />
+          <stop stopColor="#5F9DA9" />
+          <stop offset="1" stopColor="#E9F3F3" stopOpacity="0.01" />
         </linearGradient>
         <linearGradient
           id="paint4_linear_1_774"
@@ -489,8 +489,8 @@ export const FormIcons = {
           y2="28"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#5F9DA9" />
-          <stop offset="1" stop-color="#E9F3F3" stop-opacity="0.01" />
+          <stop stopColor="#5F9DA9" />
+          <stop offset="1" stopColor="#E9F3F3" stopOpacity="0.01" />
         </linearGradient>
         <linearGradient
           id="paint5_linear_1_774"
@@ -500,8 +500,8 @@ export const FormIcons = {
           y2="49.7949"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#5F9DA9" />
-          <stop offset="1" stop-color="#E9F3F3" stop-opacity="0.01" />
+          <stop stopColor="#5F9DA9" />
+          <stop offset="1" stopColor="#E9F3F3" stopOpacity="0.01" />
         </linearGradient>
         <linearGradient
           id="paint6_linear_1_774"
@@ -511,8 +511,8 @@ export const FormIcons = {
           y2="49.7949"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#5F9DA9" />
-          <stop offset="1" stop-color="#E9F3F3" stop-opacity="0.01" />
+          <stop stopColor="#5F9DA9" />
+          <stop offset="1" stopColor="#E9F3F3" stopOpacity="0.01" />
         </linearGradient>
         <linearGradient
           id="paint7_linear_1_774"
@@ -522,8 +522,8 @@ export const FormIcons = {
           y2="75.9487"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#5F9DA9" />
-          <stop offset="1" stop-color="#E9F3F3" stop-opacity="0.01" />
+          <stop stopColor="#5F9DA9" />
+          <stop offset="1" stopColor="#E9F3F3" stopOpacity="0.01" />
         </linearGradient>
         <linearGradient
           id="paint8_linear_1_774"
@@ -533,8 +533,8 @@ export const FormIcons = {
           y2="75.9487"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#5F9DA9" />
-          <stop offset="1" stop-color="#E9F3F3" stop-opacity="0.01" />
+          <stop stopColor="#5F9DA9" />
+          <stop offset="1" stopColor="#E9F3F3" stopOpacity="0.01" />
         </linearGradient>
         <linearGradient
           id="paint9_linear_1_774"
@@ -544,8 +544,8 @@ export const FormIcons = {
           y2="28"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#5F9DA9" />
-          <stop offset="1" stop-color="#E9F3F3" stop-opacity="0.01" />
+          <stop stopColor="#5F9DA9" />
+          <stop offset="1" stopColor="#E9F3F3" stopOpacity="0.01" />
         </linearGradient>
       </defs>
     </svg>
