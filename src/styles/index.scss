@@ -25,6 +25,10 @@ body {
     -ms-user-select: none;
     user-select: none;
     @apply bg-brand-grey;
+
+    .divider {
+        @apply flex flex-row border w-full border-brand-border-grey mt-2 cursor-default;
+      }
 }
 
 @import '../components/Tag/Tag.scss';
@@ -35,3 +39,4 @@ body {
 @import '../components/SearchBox/Searchbox.scss';
 @import '../components/BaseLayout/BaseLayout.scss';
 @import '../components/PinaField/Field.scss';
+@import '../components/Modal/PinaModal.scss';

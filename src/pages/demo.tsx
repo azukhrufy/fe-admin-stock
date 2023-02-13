@@ -16,6 +16,9 @@ import { TagIcons } from "../components/Icons/TagIcons";
 import BaseLayout from "../components/BaseLayout/BaseLayout";
 import Tag from "../components/Tag/Tag";
 import Pill from "../components/Pill/Pill";
+import { useModal } from "../hooks/useModal";
+import PinaModal from "../components/Modal/PinaModal";
+import TextField from "../components/PinaField/TextField";
 
 
 const userData = {
@@ -59,12 +62,16 @@ const Demo = () => {
   let timeRangeFilter = useFilter();
   let contentFilter = useFilter();
 
+  const checkoutModal = useModal();
+
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
   const handleSubmit = () => {
-    console.log("submit");
+    console.log('open');
+    checkoutModal.handleOpen();
+    // alert('submit');
   };
 
   return (
@@ -160,7 +167,9 @@ const Demo = () => {
                   <div className="checkout-content">
                     <p>Dana yang tersedia</p>
                     <p>IDR {userData.buyingPwr}</p>
-                    <form onSubmit={handleSubmit}>
+                    {/* <form 
+                    // onSubmit={handleSubmit}
+                    > */}
                       <Field
                         name="lot"
                         label="Jumlah Lot"
@@ -183,6 +192,7 @@ const Demo = () => {
                           requestedPrice.handleChange(e)
                         }
                       />
+                      <div className="divider"></div>
                       <div className="pina-subtotal">
                         <p>Total Pembelian</p>
                         <p> {subTotal} </p>
@@ -190,9 +200,12 @@ const Demo = () => {
                       <div className="divider"></div>
                       <div className="divider"></div>
                       <Pill className="mt-4 p-2" pillType="active">
-                        <button type="submit">Beli</button>
+                        <button 
+                        // type="submit"
+                        onClick={checkoutModal.handleOpen}
+                        >Beli</button>
                       </Pill>
-                    </form>
+                    {/* </form> */}
                   </div>
                 </TabPanel>
                 <TabPanel value={value} index={1}>
@@ -226,6 +239,7 @@ const Demo = () => {
                         onClickSuffix={desiredPrice.add}
                         onChangeValue={(e: any) => desiredPrice.handleChange(e)}
                       />
+                      <div className="divider"></div>
                       <div className="pina-subtotal">
                         <p>Total Penjualan</p>
                         <p> {subTotal} </p>
@@ -242,6 +256,19 @@ const Demo = () => {
             </div>
           </div>
         </aside>
+        <PinaModal
+          open ={checkoutModal.open}
+          handleClose = {checkoutModal.handleClose}
+          icon={FormIcons.seed}
+        >
+          <>
+          <div className="divider"></div>
+          <TextField
+            label="Stock"
+            value={'TLKM'}
+          />
+          </>
+        </PinaModal>
       </BaseLayout>
     </>
   );

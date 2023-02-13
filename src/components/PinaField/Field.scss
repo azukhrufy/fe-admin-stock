@@ -37,10 +37,6 @@
   }
 }
 
-.pina-input-field:nth-child(2):after {
-  content: "";
-  @apply flex flex-row border w-full border-brand-border-grey mt-5 cursor-default;
-}
 
 
 .pina-text-field{
