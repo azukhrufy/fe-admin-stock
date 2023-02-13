@@ -144,5 +144,18 @@
       }
     }
   }
+}
 
+.pina-modal-header{
+  @apply text-center;
+
+  p:nth-child(1){
+    font-family: Gotham-Rounded-Bold;
+    @apply text-base;
+  }
+
+  p:nth-child(2){
+    font-family: Gotham-Rounded;
+    @apply text-brand-text-grey text-xs;
+  }
 }

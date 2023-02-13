@@ -20,21 +20,20 @@ import { useModal } from "../hooks/useModal";
 import PinaModal from "../components/Modal/PinaModal";
 import TextField from "../components/PinaField/TextField";
 
-
 const userData = {
   portfolio: "130.431.449",
   buyingPwr: 13431449,
   image: <img src="/Image/user.png" alt="user" />,
   stock: [
     {
-      code: 'TLKM',
+      code: "TLKM",
       lot: 5,
     },
     {
-      code: 'ANTM',
+      code: "ANTM",
       lot: 3,
     },
-  ]
+  ],
 };
 
 function a11yProps(index: number) {
@@ -63,13 +62,14 @@ const Demo = () => {
   let contentFilter = useFilter();
 
   const checkoutModal = useModal();
+  const sellModal = useModal();
 
   const handleChange = (event: React.SyntheticEvent, newValue: number) => {
     setValue(newValue);
   };
 
   const handleSubmit = () => {
-    console.log('open');
+    console.log("open");
     checkoutModal.handleOpen();
     // alert('submit');
   };
@@ -117,9 +117,7 @@ const Demo = () => {
                 </Pill>
               ))}
             </div>
-            <StockChart
-              activeFilter = {activeFilter}
-            />
+            <StockChart activeFilter={activeFilter} />
           </div>
           <div className="pina-card emitent-content">
             <div className="pina-pills-container">
@@ -127,7 +125,9 @@ const Demo = () => {
                 <Pill
                   key={key}
                   pillType={activeContentFilter === key ? "active" : "default"}
-                  onClick={() => contentFilter.filter(key, setActiveContentFilter)}
+                  onClick={() =>
+                    contentFilter.filter(key, setActiveContentFilter)
+                  }
                 >
                   {filter}
                 </Pill>
@@ -138,10 +138,9 @@ const Demo = () => {
                 value={emitenData.statistic}
                 active={activeContentFilter}
               />
-              <CompanyProfile active = {activeContentFilter}/>
+              <CompanyProfile active={activeContentFilter} />
             </div>
           </div>
-         
         </div>
         <aside>
           <div className="pina-card">
@@ -170,86 +169,85 @@ const Demo = () => {
                     {/* <form 
                     // onSubmit={handleSubmit}
                     > */}
-                      <Field
-                        name="lot"
-                        label="Jumlah Lot"
-                        defaultValue={buyLot}
-                        prefixIcon={FormIcons.minus}
-                        suffixIcon={FormIcons.plus}
-                        onClickPrefix={requestedLot.sub}
-                        onClickSuffix={requestedLot.add}
-                        onChangeValue={(e: any) => requestedLot.handleChange(e)}
-                      />
-                      <Field
-                        name="stockPrice"
-                        label="Harga Saham"
-                        defaultValue={buyPrice}
-                        prefixIcon={FormIcons.minus}
-                        suffixIcon={FormIcons.plus}
-                        onClickPrefix={requestedPrice.sub}
-                        onClickSuffix={requestedPrice.add}
-                        onChangeValue={(e: any) =>
-                          requestedPrice.handleChange(e)
-                        }
-                      />
-                      <div className="divider"></div>
-                      <div className="pina-subtotal">
-                        <p>Total Pembelian</p>
-                        <p> {subTotal} </p>
-                      </div>
-                      <div className="divider"></div>
-                      <div className="divider"></div>
-                      <Pill className="mt-4 p-2" pillType="active">
-                        <button 
+                    <Field
+                      name="lot"
+                      label="Jumlah Lot"
+                      defaultValue={buyLot}
+                      prefixIcon={FormIcons.minus}
+                      suffixIcon={FormIcons.plus}
+                      onClickPrefix={requestedLot.sub}
+                      onClickSuffix={requestedLot.add}
+                      onChangeValue={(e: any) => requestedLot.handleChange(e)}
+                    />
+                    <Field
+                      name="stockPrice"
+                      label="Harga Saham"
+                      defaultValue={buyPrice}
+                      prefixIcon={FormIcons.minus}
+                      suffixIcon={FormIcons.plus}
+                      onClickPrefix={requestedPrice.sub}
+                      onClickSuffix={requestedPrice.add}
+                      onChangeValue={(e: any) => requestedPrice.handleChange(e)}
+                    />
+                    <div className="divider"></div>
+                    <div className="pina-subtotal">
+                      <p>Total Pembelian</p>
+                      <p> {subTotal} </p>
+                    </div>
+                    <div className="divider"></div>
+                    <div className="divider"></div>
+                    <Pill className="mt-4 p-2" pillType="active">
+                      <button
                         // type="submit"
                         onClick={checkoutModal.handleOpen}
-                        >Beli</button>
-                      </Pill>
+                      >
+                        Beli
+                      </button>
+                    </Pill>
                     {/* </form> */}
                   </div>
                 </TabPanel>
                 <TabPanel value={value} index={1}>
                   <div className="checkout-content">
                     <p>Lot yang tersedia</p>
-                    <p>{userData.stock.map((stock) => {
-                      if(stock.code === emitenData.code){
-                        return(
-                          stock.lot
-                        );
-                      }
-                    })} Lot</p>
-                    <form onSubmit={handleSubmit}>
-                      <Field
-                        name="lot"
-                        label="Jumlah Lot"
-                        defaultValue={buyLot}
-                        prefixIcon={FormIcons.minus}
-                        suffixIcon={FormIcons.plus}
-                        onClickPrefix={selledLot.sub}
-                        onClickSuffix={selledLot.add}
-                        onChangeValue={(e: any) => selledLot.handleChange(e)}
-                      />
-                      <Field
-                        name="stockPrice"
-                        label="Harga Saham"
-                        defaultValue={buyPrice}
-                        prefixIcon={FormIcons.minus}
-                        suffixIcon={FormIcons.plus}
-                        onClickPrefix={desiredPrice.sub}
-                        onClickSuffix={desiredPrice.add}
-                        onChangeValue={(e: any) => desiredPrice.handleChange(e)}
-                      />
-                      <div className="divider"></div>
-                      <div className="pina-subtotal">
-                        <p>Total Penjualan</p>
-                        <p> {subTotal} </p>
-                      </div>
-                      <div className="divider"></div>
-                      <div className="divider"></div>
-                      <Pill className="mt-4 p-2" pillType="active">
-                        <button type="submit">Jual</button>
-                      </Pill>
-                    </form>
+                    <p>
+                      {userData.stock.map((stock) => {
+                        if (stock.code === emitenData.code) {
+                          return stock.lot;
+                        }
+                      })}{" "}
+                      Lot
+                    </p>
+                    <Field
+                      name="lot"
+                      label="Jumlah Lot"
+                      defaultValue={buyLot}
+                      prefixIcon={FormIcons.minus}
+                      suffixIcon={FormIcons.plus}
+                      onClickPrefix={selledLot.sub}
+                      onClickSuffix={selledLot.add}
+                      onChangeValue={(e: any) => selledLot.handleChange(e)}
+                    />
+                    <Field
+                      name="stockPrice"
+                      label="Harga Saham"
+                      defaultValue={buyPrice}
+                      prefixIcon={FormIcons.minus}
+                      suffixIcon={FormIcons.plus}
+                      onClickPrefix={desiredPrice.sub}
+                      onClickSuffix={desiredPrice.add}
+                      onChangeValue={(e: any) => desiredPrice.handleChange(e)}
+                    />
+                    <div className="divider"></div>
+                    <div className="pina-subtotal">
+                      <p>Total Penjualan</p>
+                      <p> {subTotal} </p>
+                    </div>
+                    <div className="divider"></div>
+                    <div className="divider"></div>
+                    <Pill className="mt-4 p-2" pillType="active">
+                      <button onClick={sellModal.handleOpen}>Jual</button>
+                    </Pill>
                   </div>
                 </TabPanel>
               </Box>
@@ -257,39 +255,54 @@ const Demo = () => {
           </div>
         </aside>
         <PinaModal
-          open ={checkoutModal.open}
-          handleClose = {checkoutModal.handleClose}
+          open={checkoutModal.open}
+          handleClose={checkoutModal.handleClose}
           icon={FormIcons.seed}
         >
           <>
-          <div className="divider"></div>
-          <TextField
-            label="Stock"
-            value={emitenData.code}
-          />
-          <TextField
-            label="Action"
-            value={'Buy'}
-          />
-          <TextField
-            label="Harga"
-            value={buyPrice.toString()}
-          />
-          <TextField
-            label="Lot"
-            value={buyLot.toString()}
-          />
-          <TextField
-            label="Biaya"
-            value={String(2500)}
-          />
-          <div className="divider"></div>
-          <TextField 
-            label="Total Amount"
-            value={String(subTotal + 2500)}
-          />
-          <div className="divider" style={{marginBottom: '6px'}}></div>
-          <div className="divider"></div>
+            <div className="pina-modal-header">
+              <p>Mohon Cek Kembali Orderan Kamu</p>
+              <p>No Order: P123456HEZ</p>
+            </div>
+            <div className="divider"></div>
+            <TextField label="Stock" value={emitenData.code} />
+            <TextField className={'text-brand-orange'} label="Action" value={"Buy"} />
+            <TextField label="Harga" value={buyPrice.toString()} />
+            <TextField label="Lot" value={buyLot.toString()} />
+            <TextField label="Biaya" value={String(2500)} />
+            <div className="divider"></div>
+            <TextField label="Total Amount" value={String(subTotal + 2500)} />
+            <div className="divider" style={{ marginBottom: "6px" }}></div>
+            <div className="divider"></div>
+            <Pill className="mt-4 p-2" pillType="active">
+              <button onClick={checkoutModal.handleClose}>Beli</button>
+            </Pill>
+          </>
+        </PinaModal>
+
+        <PinaModal
+          open={sellModal.open}
+          handleClose={sellModal.handleClose}
+          icon={FormIcons.seed}
+        >
+          <>
+            <div className="pina-modal-header">
+              <p>Mohon Cek Kembali Orderan Kamu</p>
+              <p>No Order: P123456HEZ</p>
+            </div>
+            <div className="divider"></div>
+            <TextField label="Stock" value={emitenData.code} />
+            <TextField className={'text-brand-orange'} label="Action" value={"Sell"} />
+            <TextField label="Harga" value={buyPrice.toString()} />
+            <TextField label="Lot" value={buyLot.toString()} />
+            <TextField label="Biaya" value={String(2500)} />
+            <div className="divider"></div>
+            <TextField label="Total Amount" value={String(subTotal + 2500)} />
+            <div className="divider" style={{ marginBottom: "6px" }}></div>
+            <div className="divider"></div>
+            <Pill className="mt-4 p-2" pillType="active">
+              <button onClick={sellModal.handleClose}>Jual</button>
+            </Pill>
           </>
         </PinaModal>
       </BaseLayout>
