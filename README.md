@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+# Pina Stock Admin
+This project is based on Pina Requirement for Front End Developer.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## How to Install
 
-## Available Scripts
+open the terminal on VS Code and run this command:
+```
+npm install
+```
 
-In the project directory, you can run:
+## Start Application
 
-### `npm start`
+open the terminal on VS Code and run this command:
+```
+npm start
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## ScreenShoot
+Main Page :
+![image](https://user-images.githubusercontent.com/36157404/218379541-8d03a223-75c3-4abd-8911-f7f0121bfab2.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Modal Content for checkout :
+![image](https://user-images.githubusercontent.com/36157404/218379608-ca73ea81-b700-47fb-8909-5e411e2a7c8d.png)
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Company Profile info in Stock Content:
+![image](https://user-images.githubusercontent.com/36157404/218379856-eb291572-1f0c-467f-91db-31256030164b.png)
