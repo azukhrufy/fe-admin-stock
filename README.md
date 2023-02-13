@@ -1,6 +1,13 @@
 # Pina Stock Admin
 This project is based on Pina Requirement for Front End Developer.
 
+## Clone the Repository
+
+```
+git clone https://github.com/azukhrufy/fe-admin-stock.git
+cd fe-admin-stock
+```
+
 ## How to Install
 
 open the terminal on VS Code and run this command:
